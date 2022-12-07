@@ -1,0 +1,144 @@
+
+body{
+    background-image: url("./imgs/silverware.jpg");
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: 'Segoe UI';
+    max-width:1024px;
+    padding-bottom:25px;
+}
+
+h1,h2,h3{
+    text-align: center;
+    background-color: #f0f0f0;
+    color:#a4a400;
+    border-radius: 15px ;
+    border: 2px solid #73ad21;
+    margin: 20px auto 20px auto;
+    padding: 15px;
+}
+h1{
+    width: 60%;
+    padding:23px ;
+    font-size: x-large;
+}
+h2{
+    width: 40%;
+    height: 50%;
+    font-size: large;
+}
+h3{
+    
+    width: 50%;
+    height: 50%;
+    font-size: large;
+}
+
+h4{
+    margin: 0;
+}
+.comments{
+    justify-content:left;
+    margin: 0px;
+    padding: 0px;
+}
+#Jumbo {
+    border-radius: 50%;
+    float: center;
+    width: 20rem;
+    height: 9rem;
+    object-fit: cover;
+    margin-top: 6px;
+}
+.plus-sign{
+    height: 60px;
+}
+.comments-p{
+    background-color: #ffffa8;
+}
+.ul-resp{
+    list-style-image: url('./imgs/fish_icon_24.png');
+    text-align: left;
+}
+.container-1{
+    column-count:3;
+    column-gap: 40px;
+    column-rule-style: solid;
+    column-rule-color: #a4a400;
+    padding: 2px;
+    text-align: left;
+}
+.container-img{
+    justify-content: center;
+    display: flex;
+}
+.form-cont{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+}
+.fieldset-radio{
+        text-align: center;
+}
+.in-sty{
+    width: 90%;
+    margin: 2px;
+}
+.link-a{
+    color: #a4a400;
+}
+.inline-div-form{
+    display:flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+
+
+@media screen and (max-width:1023px) {
+    .container-1{
+        column-count:2;
+    }
+    .form-cont{
+        width: 60%;
+    }
+    body{
+        width: 95%;
+        margin: auto;
+        }
+}
+@media screen and (max-width:765px){
+    .container-1{
+        column-count:1;
+    }
+    .form-cont{
+        width: 85%;
+    }
+    body{
+        width: 95%;    
+        margin: auto;
+        }
+        h1{
+            width: 85%;
+            padding:23px ;
+            font-size: x-large;
+        }
+        h2{
+            width: 70%;
+            height: 50%;
+            font-size: large;
+        }
+        h3{
+            
+            width: 70%;
+            height: 50%;
+            font-size: large;
+        }
+        .golden{
+            margin:5px;
+            text-align: left;
+        }
+}
