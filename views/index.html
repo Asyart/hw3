@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Awsome Resipes</h1>
+    <div class="container">
+        {% for Recipe in Recipes %}
+        <div class="box"><a href="recipe.html"><img src="./imgs/{{Recipe.image}}" height="130rem"></a></div>
+        {% endfor %}
+</div>
+{% endblock %}

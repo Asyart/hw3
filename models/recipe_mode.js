@@ -75,6 +75,6 @@ async function addComment(recipe_id, comment) {
 //addComment(1,com);
 
 console.log(getComments(1));
-module.exports = {getAllRecipes, }
+module.exports = {getAllRecipes}
 //console.log(getAllRecipes());
 
