@@ -28,11 +28,15 @@ app.get("/", async (req, res) => {
 
 app.get("/recipe/:recipe_id", async (req, res) => {
      console.log(req.params.recipe_id);
-        res.render('recipe.html', {recipeDetails: await getRecipeDetail(req.params.recipe_id)})
-        let recipeDetails= await getRecipeDetail(req.params.recipe_id)
-        console.log(recipeDetails)
+        res.render('recipe.html', {recipeDetails: await getRecipeDetail(req.params.recipe_id),allComments: await getComments(req.params.recipe_id)})
+        //let recipeDetails= await getRecipeDetail(req.params.recipe_id)
+        //console.log(recipeDetails)
     })
-
+    app.get('/recipe/:recipe_id/comments', async(req,res)=>{
+        res.render('recipe.html',{allComments: await getComments(req.params.recipe_id)})
+        //let allComments= await getComments(req.params.recipe_id)
+        //console.log(allComments[1].id)
+    })
 //app.post('/', (req,res))
 app.listen(5000, () => {
     console.log('listening on http://127.0.0.1:5000')
