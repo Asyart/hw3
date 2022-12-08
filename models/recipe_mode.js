@@ -15,7 +15,7 @@ async function getAllRecipes(){
     await db.close()
 
     // log 
-    //console.log(recipes)
+    console.log(recipes)
     
     return recipes
 }
@@ -73,7 +73,6 @@ async function addComment(recipe_id, comment) {
 // }
 //addComment(1,com);
 
-console.log(getRecipeDetail(2));
 module.exports = {getAllRecipes,getRecipeDetail,getComments,addComment}
 //console.log(getAllRecipes());
 

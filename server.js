@@ -26,8 +26,11 @@ app.get("/", async (req, res) => {
         res.render('index.html', {Recipes: await getAllRecipes()})
     })
 
-app.get("/recipes/:recipe_id", async (req, res) => {
-        res.render('recipe.html', {recipeDetails: await getRecipeDetail(1)})
+app.get("/recipe/:recipe_id", async (req, res) => {
+     console.log(req.params.recipe_id);
+        res.render('recipe.html', {recipeDetails: await getRecipeDetail(req.params.recipe_id)})
+        let recipeDetails= await getRecipeDetail(req.params.recipe_id)
+        console.log(recipeDetails)
     })
 
 //app.post('/', (req,res))
