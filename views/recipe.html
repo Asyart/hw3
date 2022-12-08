@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Jumbo fish fingers</h1>
+    <h3>GOLDEN CRISPY BREADCRUMBS</h3>
+    <p class="golden"><strong>Makes</strong> 10 portions <strong>Cooks In</strong> 25 minutes prep, plus cooking <strong>Difficulty</strong> Not too tricky</p>
+    <hr>
+    
+    <h2>INGREDIENTS</h2>
+    <div class="container-1">
+    <div class="container-img"> <img id="Jumbo" src="./imgs/JumboFishFingers.jpg"></div>
+    <ul class="ul-resp">
+        {% for ingredient in recipeDetails.ingredient %}
+        <li>{{ingredient.item}}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    <hr>
+    <h2>METHOD</h2>
+    <div class="container-1">
+        <div class="container-2">
+    <ol>
+        <li><b>Cut the fish into 10 x 120g portions.</b> I tend to cut the side lengthways about 3cm thick, then
+            into chunks from that</li>
+        <li><b>In a shallow bowl:</b>
+            <ul class="ul-resp">
+                <li>whisk the eggs with the paprika and a pinch of sea salt and black pepper</li>
+                <li>Tear the bread into a food processor, grate in the cheese, add 2 <abbr
+                        title="tablespoons">tbsp</abbr> of oil and whiz until
+                    you have breadcrumbs, then tip into a tray</li>
+                <li>Coat each fish portion in the egg mixture, let any excess drip off, then turn in the
+                    breadcrumbs until well coated all over</li>
+                <li>Transfer to a tray lined with greaseproof paper, layering them up between sheets of paper
+                    until they’re all coated.</li>
+                <li>Cook right away or freeze in the tray – once frozen, you can pop them into a tub or
+                    sandwich bags for easier storage.</li>
+            </ul>
+        </li>
+        <li><b>To cook:</b>
+            <ul class="ul-resp">
+                <li>Place however many jumbo fish fingers you need on a roasting tray.
+                </li>
+                <li>Cook in a preheated oven at 200°C/400°F/gas 6 for 15 minutes from fresh, or 20 minutes
+                    from frozen, or until golden and cooked through.</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+</div>
+<hr>
+    <h2>User Comments</h2>
+    <div class="form-cont"><form>
+        <fieldset >
+            <legend>Enter a comment:</legend>
+
+            <label><b>Name:</b></label><br>
+            <input class="in-sty" ></input>
+            <br><br>
+            <label><b>Comment:</b></label><br>
+            <textarea  class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
+                name="wrstyle"></textarea>
+            <br>
+            <img class="plus-sign"src="./imgs/PlusSign.jpg">
+        </fieldset>
+    </form>
+    
+    <h4> All comments: </h4>
+    <ul class="comments">
+        <div class="comments-p"><p> This is a very fun recipe to follow. </p>
+        <p> - Ahmed Z. </p></div>
+        <div class="comments-p"><p> This is my favorite recipe. I enjoy it. </p>
+        <p> - Karim K. </p></div>
+    
+    </ul>
+</div>
+    <hr>
+    <h2>Sign-up to receive new recipes:</h2>
+
+    <form  class="form-cont" action="https://formspree.io/f/xlevnzak" method="post">
+        <!--this action is easy way to send the content of
+        the form and reasive it in my email dirctly without using mailto <action="mailto:asla12391941@gmail.com?subject=Email%20Subject&body=Contents%20of%20email" method="GET">
+        it's free website btw-->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="inline-div-form" >
+            <label><b>Name: </b></label>
+            <input name="body" class="in-sty"></input>
+            </div>
+            <br>
+            <div class="inline-div-form" ><label><b>Email: </b></label>
+            <input class="in-sty" type="email" name="email" placeholder="xxxx@domain.com"></input>
+        </div>
+        </fieldset>
+        <br>
+        <fieldset >
+            
+            <legend>Types of recipes</legend>
+            <div class="fieldset-radio">
+            <label for="age1">Breakfast</label>
+            <input name="recipe" type="radio">
+            <label for="age1">Lunch</label>
+            <input name="recipe" type="radio">
+            <label for="age1">Dinner</label>
+            <input name="recipe" type="radio">
+            </div>
+        </fieldset><br>
+        <button type="submit">Sign Up</button>
+    </form>
+    <hr>
+
+    <h2>LINKS</h2>
+
+    <a class="link-a" target="_blank" href="https://www.google.com/search?q=fish+fingers+recipe&start">Search for other fish fingers recipes</a>
+
+{% endblock %}

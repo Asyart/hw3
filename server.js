@@ -1,7 +1,8 @@
 const templateEngin = require('nunjucks')
 const express = require('express')
 const {body, validationResult} = require('express-validator');
-const {getAllRecipes} = require("./models/recipe_mode");
+const {getAllRecipes,getRecipeDetail,getComments,addComment} = require("./models/recipe_mode");
+const bodyParser = require('body-parser')
 const app = express()
 
 const sqlite3 = require('sqlite3').verbose();
@@ -25,11 +26,10 @@ app.get("/", async (req, res) => {
         res.render('index.html', {Recipes: await getAllRecipes()})
     })
 
-app.get("/recipe.html", async (req, res) => {
-        res.render('index.html', {Recipes: await getAllRecipes()})
+app.get("/recipes/:recipe_id", async (req, res) => {
+        res.render('recipe.html', {recipeDetails: await getRecipeDetail(1)})
     })
 
-//app.use(bodyParser.json);
 //app.post('/', (req,res))
 app.listen(5000, () => {
     console.log('listening on http://127.0.0.1:5000')

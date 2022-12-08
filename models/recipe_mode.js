@@ -15,7 +15,7 @@ async function getAllRecipes(){
     await db.close()
 
     // log 
-    console.log(recipes)
+    //console.log(recipes)
     
     return recipes
 }
@@ -27,7 +27,7 @@ async function getRecipeDetail(recipe_id) {
     const method = await db.get(`SELECT * FROM method where recipe_id = ${recipe_id}`)
 
     await db.close()
-    let RecipeDetail = {
+    let recipeDetails = {
         id: recipes.id,
         title:  recipes.title,
         subtitle:  recipes.subtitle,
@@ -35,13 +35,12 @@ async function getRecipeDetail(recipe_id) {
         cook_time:  recipes.cook_time,
         difficulty:  recipes.difficulty,
         image:  recipes.image,
-        item:ingredients,
+        ingredient:ingredients,
         step:method.step
       }
-    // log   
-    console.log(RecipeDetail)
-
-    return RecipeDetail
+        //console.log(ingredients);
+        //return {recipes,ingredients,method}
+    return recipeDetails
 }
 
 async function getComments(recipe_id) {
@@ -51,7 +50,7 @@ async function getComments(recipe_id) {
     let Comments = {comments};
     
     // log 
-    console.log(Comments)
+    //console.log(Comments)
 
     return Comments
 }
@@ -74,7 +73,7 @@ async function addComment(recipe_id, comment) {
 // }
 //addComment(1,com);
 
-console.log(getComments(1));
-module.exports = {getAllRecipes}
+console.log(getRecipeDetail(2));
+module.exports = {getAllRecipes,getRecipeDetail,getComments,addComment}
 //console.log(getAllRecipes());
 
