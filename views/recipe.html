@@ -1,98 +1,105 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Jumbo fish fingers</h1>
-    <h3>{{recipeDetails.subtitle}}</h3>
-    <p class="golden"><strong>Makes</strong> {{recipeDetails.make}} <strong>Cooks In</strong> {{recipeDetails.cook_time}} <strong>Difficulty</strong> {{recipeDetails.difficulty}}</p>
-    <hr>
-    
-    <h2>INGREDIENTS</h2>
-    <div class="container-1">
+
+
+<h3>{{recipeDetails.subtitle}}</h3>
+<p class="golden">
+    <strong> Makes</strong> {{recipeDetails.make}} <strong>Cooks In</strong> {{recipeDetails.cook_time}}
+    <strong>Difficulty</strong> {{recipeDetails.difficulty}}
+</p>
+<hr>
+
+<h2>INGREDIENTS</h2>
+<div class="container-1">
     <div class="container-img"> <img id="Jumbo" src="/imgs/{{recipeDetails.image}}"></div>
     <ul class="ul-resp">
         {% for ingredient in recipeDetails.ingredient %}
         <li>{{ingredient.item}}</li>
         {% endfor %}
     </ul>
-    </div>
-    <hr>
-    <h2>METHOD</h2>
-    <div class="container-1">
-        <div class="container-2">
-    <ol>
-        {% for method in recipeDetails.step %}
-        <li>{{method.step}}</li>
-        {% endfor %}
-    </ol>
-</div>
 </div>
 <hr>
-
-    <h2>User Comments</h2>
-    
-    <div class="form-cont"><form>
-        <button class="See-btn" type="button" onclick="seeComments(this)">See Comments</button>
-        <div id="block">
-        <fieldset >
+<h2>METHOD</h2>
+<div class="container-1">
+    <div class="container-2">
+        <ol>
+            {% for method in recipeDetails.step %}
+            <li>{{method.step}}</li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+<hr>
+<h2>User Comments</h2>
+<div class="form-cont">
+    <form action="/recipe" method="post">
+        <fieldset>
             <legend>Enter a comment:</legend>
 
             <label><b>Name:</b></label><br>
-            <input class="in-sty" ></input>
+            <input class="in-sty" name="author"></input>
             <br><br>
             <label><b>Comment:</b></label><br>
-            <textarea  class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
-                name="wrstyle"></textarea>
+            <textarea class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
+                name="comment"></textarea>
             <br>
-            <img class="plus-sign"src="/imgs/PlusSign.jpg">
+
+            <input type="image" src="/imgs/PlusSign.jpg" height="50px" width="50px">
+            <!-- <img class="plus-sign" src="/imgs/PlusSign.jpg"> -->
         </fieldset>
     </form>
-    
-    <h4> All comments: </h4>
-    <h4> User comments </h4>
-    <ul class="comments">
-        {% for comment in allComments %}
-        <div class="comments-p"><p> {{comment.comment}} </p>
-        <p>{{comment.author}}</p></div>
-        {% endfor %}
-    </ul>
-</div></div>
-    <hr>
-    <h2>Sign-up to receive new recipes:</h2>
 
-    <form  class="form-cont" action="mailto:asla12391941@gmail.com?subject=Email%20Subject&body=Contents%20of%20email" method="GET">
-        <!--this action is easy way to send the content of
+    <h4> All comments: </h4>
+    <ul class="comments">
+        {% for comment in Comments %}
+        <div class="comments-p">
+            <p>{{comment.comment}}</p>
+            <p> {{comment.author}}</p>
+        </div>
+        {% endfor %}
+
+    </ul>
+</div>
+<hr>
+<h2>Sign-up to receive new recipes:</h2>
+
+<form class="form-cont" action="https://formspree.io/f/xlevnzak" method="post">
+    <!--this action is easy way to send the content of
         the form and reasive it in my email dirctly without using mailto <action="mailto:asla12391941@gmail.com?subject=Email%20Subject&body=Contents%20of%20email" method="GET">
         it's free website btw-->
-        <fieldset>
-            <legend>Personal Information</legend>
+    <fieldset>
+        <legend>Personal Information</legend>
 
-            <div class="inline-div-form" >
+        <div class="inline-div-form">
             <label><b>Name: </b></label>
             <input name="body" class="in-sty"></input>
-            </div>
-            <br>
-            <div class="inline-div-form" ><label><b>Email: </b></label>
+        </div>
+        <br>
+        <div class="inline-div-form"><label><b>Email: </b></label>
             <input class="in-sty" type="email" name="email" placeholder="xxxx@domain.com"></input>
         </div>
-        </fieldset>
-        <br>
-        <fieldset >
-            
-            <legend>Types of recipes</legend>
-            <div class="fieldset-radio">
+    </fieldset>
+    <br>
+    <fieldset>
+
+        <legend>Types of recipes</legend>
+        <div class="fieldset-radio">
             <label for="age1">Breakfast</label>
             <input name="recipe" type="radio">
             <label for="age1">Lunch</label>
             <input name="recipe" type="radio">
             <label for="age1">Dinner</label>
             <input name="recipe" type="radio">
-            </div>
-        </fieldset><br>
-        <button type="submit">Sign Up</button>
-    </form>
-    <hr>
+        </div>
+    </fieldset><br>
+    <button type="submit">Sign Up</button>
+</form>
+<hr>
 
-    <h2>LINKS</h2>
+<h2>LINKS</h2>
 
-    <a class="link-a" target="_blank" href="https://www.google.com/search">Search for other {{recipeDetails.subtitle}} recipes</a>
+<a class="link-a" target="_blank" href="https://www.google.com/search?q=fish+fingers+recipe&start">Search for other fish
+    fingers recipes</a>
 
 {% endblock %}
