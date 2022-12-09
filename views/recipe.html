@@ -31,23 +31,25 @@
     </div>
 </div>
 <hr>
+
 <h2>User Comments</h2>
+
 <div class="form-cont">
-    <form action="/recipe" method="post">
-        <fieldset>
-            <legend>Enter a comment:</legend>
+    <form>
+        <button class="See-btn" type="button" onclick="seeComments(this)">See Comments</button>
+        <div id="block">
+            <fieldset>
+                <legend>Enter a comment:</legend>
 
-            <label><b>Name:</b></label><br>
-            <input class="in-sty" name="author"></input>
-            <br><br>
-            <label><b>Comment:</b></label><br>
-            <textarea class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
-                name="comment"></textarea>
-            <br>
-
-            <input type="image" src="/imgs/PlusSign.jpg" height="50px" width="50px">
-            <!-- <img class="plus-sign" src="/imgs/PlusSign.jpg"> -->
-        </fieldset>
+                <label><b>Name:</b></label><br>
+                <input class="in-sty" name="author"></input>
+                <br><br>
+                <label><b>Comment:</b></label><br>
+                <textarea class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
+                    name="comment"></textarea>
+                <br>
+                <img class="plus-sign" src="/imgs/PlusSign.jpg">
+            </fieldset>
     </form>
 
     <h4> All comments: </h4>
