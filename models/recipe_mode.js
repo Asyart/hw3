@@ -56,7 +56,7 @@ async function getComments(recipe_id) {
 }
 
 async function addComment(recipe_id, comment) {
-    const auth= comment.auther;
+    const auth= comment.author;
     const text= comment.text;
     const db = await getDbConnection();
     sql=`INSERT INTO comments(author, comment ,recipe_id) VALUES (?,?,?)`
