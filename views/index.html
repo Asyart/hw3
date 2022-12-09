@@ -3,7 +3,7 @@
 <h1>All Awsome Resipes</h1>
     <div class="container">
         {% for Recipe in Recipes %}
-        <div class="box"><a href="recipe/{{Recipe.id}}"><img class="imgs" src="./imgs/{{Recipe.image}}" height="130rem"></a></div>
+        <div class="box"><a href="recipes/{{Recipe.id}}"><img class="imgs" src="./imgs/{{Recipe.image}}" height="130rem"></a></div>
         {% endfor %}
 </div>
 {% endblock %}

@@ -28,23 +28,20 @@
 <hr>
 
     <h2>User Comments</h2>
-    
     <div class="form-cont">
-        
         <button class="See-btn" type="button" onclick="seeComments(this)">See Comments</button>
         <div id="block">
-    <form>
+    <form action="./{{recipeDetails.id}}/comments" method="POST">
         <fieldset >
             <legend>Enter a comment:</legend>
 
             <label><b>Name:</b></label><br>
-            <input class="in-sty" ></input>
+            <input name="author" id="author-input" class="in-sty"></input>
             <br><br>
             <label><b>Comment:</b></label><br>
-            <textarea  class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
-                name="wrstyle"></textarea>
+            <textarea  class="in-sty" id="comment-input" placeholder="Enter your comment here..." type="text" id="wrstyle" name="comment"></textarea>
             <br>
-            <input class="plus-sign"src="/imgs/PlusSign.jpg">
+            <input type="image" class="plus-sign" src="/imgs/PlusSign.jpg">
         </fieldset>
     </form>
     
@@ -52,18 +49,19 @@
     <h4> User comments </h4>
     <ul class="comments">
         {% for comment in allComments %}
-        <div class="comments-p"><p> {{comment.comment}} </p>
-        <p>{{comment.author}}</p></div>
+        <div class="comments-p">
+            <p>{{comment.comment}} </p>
+            <p>{{comment.author}}</p>
+        </div>
         {% endfor %}
     </ul>
-</div></div>
+</div>
+</div>
     <hr>
     <h2>Sign-up to receive new recipes:</h2>
 
     <form  class="form-cont" action="mailto:asla12391941@gmail.com?subject=Email%20Subject&body=Contents%20of%20email" method="GET">
-        <!--this action is easy way to send the content of
-        the form and reasive it in my email dirctly without using mailto <action="mailto:asla12391941@gmail.com?subject=Email%20Subject&body=Contents%20of%20email" method="GET">
-        it's free website btw-->
+        
         <fieldset>
             <legend>Personal Information</legend>
 

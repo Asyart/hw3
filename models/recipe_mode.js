@@ -57,7 +57,7 @@ async function getComments(recipe_id) {
 
 async function addComment(recipe_id, comment) {
     const auth= comment.author;
-    const text= comment.text;
+    const text= comment.comment;
     const db = await getDbConnection();
     sql=`INSERT INTO comments(author, comment ,recipe_id) VALUES (?,?,?)`
     const comments = await db.run(sql,[auth,text,recipe_id])
@@ -67,10 +67,11 @@ async function addComment(recipe_id, comment) {
     return
 }
 // ### the style of comment object should be like this ###
-// let com={
-//     auther:'adhm'
-//     ,text:'adhm comment'
+//  let com={
+//     author:'test name '
+// ,   text:'khalid comment'
 // }
+//console.log(addComment(1, com));
 //addComment(1,com);
 //console.log(getComments(1));
 module.exports = {getAllRecipes,getRecipeDetail,getComments,addComment}
