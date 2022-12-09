@@ -35,8 +35,11 @@
 <h2>User Comments</h2>
 
 <div class="form-cont">
-    <form>
-        <button class="See-btn" type="button" onclick="seeComments(this)">See Comments</button>
+
+    <button class="See-btn" type="button" onclick="seeComments(this)">See Comments</button>
+
+    <form action="/recipe" method="post">
+
         <div id="block">
             <fieldset>
                 <legend>Enter a comment:</legend>
@@ -48,7 +51,7 @@
                 <textarea class="in-sty" placeholder="Enter your comment here..." type="text" id="wrstyle"
                     name="comment"></textarea>
                 <br>
-                <img class="plus-sign" src="/imgs/PlusSign.jpg">
+                <input type="image" src="/imgs/PlusSign.jpg" height="50px" width="50px">
             </fieldset>
     </form>
 
